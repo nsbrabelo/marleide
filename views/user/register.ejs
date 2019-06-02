@@ -1,0 +1,12 @@
+<% include ../layout %>
+<div uk-grid>
+    <form action="/user/create" method="post">
+        <input class="uk-input" type="text" name="home_number" id="home_number" placeholder="Número da Casa">
+        <input class="uk-input" type="text" name="name" id="name" placeholder="Nome">
+        <input class="uk-input" type="email" name="email" id="email" placeholder="E-mail">
+        <input class="uk-input" type="password" name="password" id="password" placeholder="Senha">
+        <input class="uk-input" type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Confirme a Senha">
+        <button class="uk-button">Enviar</button>
+    </form>
+</div>
+<% include ../footer %>

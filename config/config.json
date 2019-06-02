@@ -1,15 +1,15 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
+    "username": "jason",
+    "password": "jafra&thais",
+    "database": "cond_rubi",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": null,
-    "database": "database_test",
+    "database": "cond_rubi",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
