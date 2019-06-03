@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');
 const consign = require('consign');
 
 var app = express();
@@ -12,10 +13,26 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
+app.use(session({
+  secret: 'jason',
+  resave: true,
+  saveUninitialized: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+const authGuard = (req, res, next) => {
+  // console.log(req.session);
+  if (!req.session.user) {
+    if (req.path != '/login' && req.path != '/') {
+      res.redirect('/login');
+    }
+  }
+  next();
+}
+app.use(authGuard);
 
 consign({
   locale: 'pt-br',

@@ -7,8 +7,11 @@
   <title>Marleide Monteiro</title>
   <!-- <link rel='stylesheet', href='/stylesheets/style.css'> -->
   <link rel="stylesheet" href="/css/uikit.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
   <script src="/js/uikit.min.js"></script>
   <script src="/js/uikit-icons.min.js"></script>
 </head>
 <body>
-  
+  <% if (typeof session !== 'undefined') { %>
+    <%- include partials/navbar %>
+  <% } %>

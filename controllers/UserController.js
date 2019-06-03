@@ -5,7 +5,7 @@ module.exports = (app) => {
   const UserController = {
     list: (req, res) => {
       user.findAll().then((users) => {
-        res.render('user/list', { users: users });
+        res.render('user/list', { users: users, session: req.session.user });
       })
       .catch((e) => {
         console.log(e);

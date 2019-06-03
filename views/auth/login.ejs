@@ -1,0 +1,22 @@
+<% include ../layout %>
+<div uk-grid>
+    <form method="POST" action="/login">
+
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                <input class="uk-input" type="text" name="email">
+            </div>
+        </div>
+    
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                <input class="uk-input" type="password" name="password">
+            </div>
+        </div>
+    
+        <button class="uk-button">Entrar</button>
+    </form>
+</div>
+<% include ../footer %>
